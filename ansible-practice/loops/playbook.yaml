@@ -1,0 +1,9 @@
+- hosts: localhost
+  gather_facts: no
+  tasks: 
+    - debug: 
+        msg: "Hi I am {{ item }}"
+      loop:
+        - 'Otis'
+        - 'Maeve'
+        - 'Ruby'

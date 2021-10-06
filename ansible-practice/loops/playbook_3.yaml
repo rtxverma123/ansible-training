@@ -1,0 +1,23 @@
+- hosts: localhost
+  gather_facts: no
+  vars: 
+    fruits: 
+      - mango
+      - kiwi
+      - banana
+
+    names: 
+      - fname: Tamish
+        lname: verma
+      - fname: xyz
+        lname: pqr
+  tasks: 
+    - debug: 
+        msg: "I love {{ item }}"
+      loop: "{{ fruits }}"
+
+    - debug: 
+        msg: 
+         - "First name: {{ item['fname'] }}"
+         - "Last name: {{ item['lname'] }}"
+      with_items: "{{ names }}"

@@ -1,0 +1,11 @@
+- hosts: localhost
+  gather_facts: no
+  vars: 
+    fruits: 
+      - mango
+      - kiwi
+      - banana
+  tasks: 
+    - debug: 
+        msg: "I love {{ item }}"
+      loop: "{{ fruits }}"
